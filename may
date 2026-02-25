@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Para Nicol</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:#0f0f14;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  overflow:hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1{
+  font-size:60px;
+  color:#f8c8dc;
+  opacity:0;
+  animation: aparecer 3s forwards;
+  letter-spacing:3px;
+}
+
+p{
+  font-size:28px;
+  color:#ffffff;
+  opacity:0;
+  animation: aparecer 3s forwards;
+  animation-delay:3s;
+}
+
+.flower{
+  position:absolute;
+  font-size:30px;
+  opacity:0.2;
+  animation: flotar linear infinite;
+}
+
+@keyframes flotar{
+  0%{ transform: translateY(100vh) rotate(0deg);}
+  100%{ transform: translateY(-10vh) rotate(360deg);}
+}
+
+@keyframes aparecer{
+  to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Nicol</h1>
+<p>Te quiero.</p>
+
+<script>
+for(let i=0; i<25; i++){
+  let flower = document.createElement("div");
+  flower.className = "flower";
+  flower.innerHTML = "🌷";
+  flower.style.left = Math.random()*100 + "vw";
+  flower.style.animationDuration = (8 + Math.random()*6) + "s";
+  document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
